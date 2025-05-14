@@ -5,6 +5,10 @@ app = Flask(__name__)
 # In-memory DB
 data = {}
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "Flask CRUD API is running!"})
+
 # CREATE
 @app.route('/item', methods=['POST'])
 def create_item():
